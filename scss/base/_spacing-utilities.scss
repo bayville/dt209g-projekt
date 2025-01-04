@@ -1,0 +1,61 @@
+@use '../abstracts' as a;
+
+
+// Utility-classes for margin and padding
+@each $name, $value in a.$spacing {
+  .m-#{"#{$name}"} {
+    margin: #{$value};
+  }
+
+  .p-#{"#{$name}"} {
+    padding: #{$value};
+  }
+
+  .mt-#{"#{$name}"} {
+    margin-top: #{$value};
+  }
+
+  .mb-#{"#{$name}"} {
+    margin-bottom: #{$value};
+  }
+
+  .ml-#{"#{$name}"} {
+    margin-left: #{$value};
+  }
+
+  .mr-#{"#{$name}"} {
+    margin-right: #{$value};
+  }
+
+  .mx-#{"#{$name}"} {
+    margin-inline: #{$value};
+  }
+
+  .my-#{"#{$name}"} {
+    margin-block: #{$value};
+  }
+
+  .pt-#{"#{$name}"} {
+    padding-top: #{$value};
+  }
+
+  .pb-#{"#{$name}"} {
+    padding-bottom: #{$value};
+  }
+
+  .pl-#{"#{$name}"} {
+    padding-left: #{$value};
+  }
+
+  .pr-#{"#{$name}"} {
+    padding-right: #{$value};
+  }
+
+  .px-#{"#{$name}"} {
+    margin-inline: #{$value};
+  }
+
+  .py-#{"#{$name}"} {
+    margin-block: #{$value};
+  }
+}

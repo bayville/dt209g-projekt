@@ -1,0 +1,213 @@
+@use '../abstracts' as a;
+
+// Generate display classes
+$displays: (
+  block,
+  inline-block,
+  flex,
+  inline-flex,
+  grid,
+  none,
+);
+
+@each $name in $displays {
+  .d-#{$name} {
+    display: #{$name};
+  }
+}
+
+
+// Generate grid-comluns
+$cols: (
+  grid-cols-1: repeat(1, minmax(0, 1fr)),
+  grid-cols-2: repeat(2, minmax(0, 1fr)),
+  grid-cols-3: repeat(3, minmax(0, 1fr)),
+  grid-cols-4: repeat(4, minmax(0, 1fr)),
+  grid-cols-5: repeat(5, minmax(0, 1fr)),
+  grid-cols-6: repeat(6, minmax(0, 1fr)),
+  grid-cols-7: repeat(7, minmax(0, 1fr)),
+  grid-cols-8: repeat(8, minmax(0, 1fr)),
+  grid-cols-9: repeat(9, minmax(0, 1fr)),
+  grid-cols-10: repeat(10, minmax(0, 1fr)),
+  grid-cols-11: repeat(11, minmax(0, 1fr)),
+  grid-cols-12: repeat(12, minmax(0, 1fr)),
+  grid-cols-none: none  
+);
+
+@each $name, $value in $cols {
+  .#{$name} {
+    grid-template-columns: #{$value};
+  }
+}
+
+// Generate columns for breakpoints
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $name, $value in $cols {
+      .bp-#{$breakpoint}\:#{$name} {
+        grid-template-columns: #{$value};
+      }
+    }
+  }
+}
+
+
+// Generate auto-rows classes
+$auto-rows: (
+  auto,
+  min,
+  max,
+  fr
+);
+
+@each $value in $auto-rows {
+  .grid-rows-#{$value} {
+    grid-auto-rows: #{$value};
+  }
+}
+
+
+// Generate position classes
+$positions: (
+  static,
+  relative,
+  absolute,
+  fixed,
+  sticky
+);
+
+@each $name in $positions {
+  .d-#{$name} {
+    position: #{$name};
+  }
+}
+
+
+// Generate gaps
+$gaps: (
+  0: 0,
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 0.75rem,
+  lg: 1rem,
+  xl: 1.25rem,
+);
+
+@each $size, $gap in $gaps {
+  .gap-#{$size} {
+    gap: #{$gap};
+  }
+  .gap-x-#{$size} {
+    column-gap: #{$gap};
+  }
+  .gap-y-#{$size} {
+    row-gap: #{$gap};
+  }
+}
+
+
+// Generate justify-content classes
+$justify-content: (
+  start,
+  end,
+  center,
+  between,
+  around,
+  evenly
+);
+
+@each $value in $justify-content {
+  .justify-#{$value} {
+    justify-content: #{$value};
+  }
+}
+
+
+// Align-content classes
+$align-content: (
+  start,
+  end,
+  center,
+  between,
+  around,
+  evenly,
+  stretch
+);
+
+@each $value in $align-content{
+  .content-#{$value} {
+    align-content: #{$value};
+  }
+}
+
+
+// Generate align-items classes
+$align-items: (
+  start,
+  end,
+  center,
+  baseline,
+  stretch
+);
+
+@each $value in $align-items {
+  .items-#{$value} {
+    align-items: #{$value};
+  }
+}
+
+
+// Generate flex-wrap classes
+$flex-wrap: (
+  nowrap,
+  wrap,
+  wrap-reverse
+);
+
+@each $value in $flex-wrap {
+  .flex-#{$value} {
+    flex-wrap: #{$value};
+  }
+}
+
+
+//Generate z-index classes
+$z-index: (
+  base: 0,
+  dropdown: 10,
+  overlay: 100,
+  modal: 1000,
+  toast: 9999,
+);
+
+@each $name, $value in $z-index {
+  .z-#{$name} {
+    z-index: #{$value};
+  }
+}
+
+
+// Generate flex-direction classes
+$flex-directions: (
+  row,
+  row-reverse,
+  column,
+  column-reverse
+);
+
+@each $direction in $flex-directions {
+  .flex-#{$direction} {
+    flex-direction: #{$direction};
+  }
+}
+
+// Generate flex-direction classes for all breakpoints
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $direction in $flex-directions {
+      .bp-#{$breakpoint}:flex-#{$direction} {
+        flex-direction: #{$direction};
+      }
+    }
+  }
+}

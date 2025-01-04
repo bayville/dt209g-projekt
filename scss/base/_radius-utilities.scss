@@ -1,0 +1,11 @@
+@use '../abstracts' as a;
+
+
+// Utility-classes for border-radius
+@each $name, $value in a.$radius-sizes {
+  .radius-#{"#{$name}"} {
+    border-radius: #{$value};
+  }
+
+
+}

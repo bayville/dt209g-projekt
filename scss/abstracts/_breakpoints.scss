@@ -1,0 +1,18 @@
+// Breakpoints based on chrome dev-tools
+$breakpoints: (
+  xs: 23.438em,  // Small phones
+  sm: 26.563em,  // Phones
+  md: 48em,      // Tablets in portrait
+  lg: 64em,      // Tablets in landscape / small laptops
+  xl: 80em,      // Standard laptops
+  2xl: 90em,     // Larger laptops / desktops
+  3xl: 120em     // Full HD and larger screens
+);
+
+
+$max-width-content: 1160px;
+$max-width-xs: calc((4 / 12) * $max-width-content);
+$max-width-s: calc((6 / 12) * $max-width-content);
+$max-width-m: calc((8 / 12) * $max-width-content);
+$max-width-l: calc((10 / 12) * $max-width-content);
+$max-width-xl: calc(1 * $max-width-content);

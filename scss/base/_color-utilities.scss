@@ -1,0 +1,30 @@
+@use '../abstracts' as a;
+
+// Create utility-classes for colors
+@each $name, $color in a.$colors {
+  .bg-#{"#{$name}"} {
+    @include a.bg($name);
+  }
+
+  .text-#{"#{$name}"} {
+    @include a.text($name);
+  }
+
+  .border-#{"#{$name}"}{
+    border: 5px solid;
+    @include a.border($name);
+  }
+
+ // Hover
+ .hover\:bg-#{"#{$name}"} {
+  @include a.hover(background-color, $name);
+}
+
+.hover\:text-#{"#{$name}"} {
+  @include a.hover(color, $name);
+}
+
+.hover\:border-#{"#{$name}"} {
+  @include a.hover(border-color, $name);
+}
+}

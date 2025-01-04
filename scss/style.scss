@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'base';
+@use 'components';
+@forward 'abstracts';
+
+
+//Smooth scrolling
+html{
+    scroll-behavior: smooth;
+}
+
+html, body { height: 100%; }
+
+main {
+  margin: var(--header-height) 0 0 0;
+}

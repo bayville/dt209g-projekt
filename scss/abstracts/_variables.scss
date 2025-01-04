@@ -1,0 +1,100 @@
+@use 'mixins' as m;
+
+//  Color-map
+$colors: (
+  blue: #0F253A,
+  green: #22c07c,
+  yellow: #ffcc00,
+  smoke: #f0f1f3,
+  black: #1f1f20, 
+  white: #ffffff   
+);
+
+$font-sizes: (
+  xs: calc((var(--text-base-size) / var(--text-scale-ratio)) / var(--text-scale-ratio)),
+  sm: calc(var(--text-xs) * var(--text-scale-ratio)),
+  base: var(--text-base-size),
+  md: calc(var(--text-s) * var(--text-scale-ratio) * var(--text-scale-ratio)),
+  lg: calc(var(--text-m) * var(--text-scale-ratio)),
+  xl: calc(var(--text-l) * var(--text-scale-ratio)),
+  2xl: calc(var(--text-xl) * var(--text-scale-ratio)),
+  3xl: calc(var(--text-2xl) * var(--text-scale-ratio)),
+  4xl: calc(var(--text-3xl) * var(--text-scale-ratio)),
+);
+
+$radius-sizes: (
+  xs: 4px,
+  sm: 6px,
+  md: 8px,
+  lg: 12px,
+  xl: 24px
+);
+
+
+$spacing: (
+  0: 0px,
+  auto: auto,
+  2xs: calc(var(--space-base) * 0.25),
+  xs: calc(var(--space-base) * 0.5),
+  sm: var(--space-base),
+  md: calc(var(--space-base) * 1.5),
+  lg: calc(var(--space-base) * 2),
+  xl: calc(var(--space-base) * 2.5),
+  2xl: calc(var(--space-base) * 3),
+  3xl: calc(var(--space-base) * 3.5),
+  4xl: calc(var(--space-base) * 4)
+);
+
+:root {
+  // Colors
+  @each $name, $color in $colors {
+    --color-#{"#{$name}"}: #{$color};
+  }
+
+  // Padding
+  --section-padding: 64px;
+  --side-padding: 24px;
+  --header-height: 70px;
+
+  // Spacing
+  --space-base: 1rem;
+
+
+   // Generate radius root variables
+   @each $name, $radius in $radius-sizes {
+    --radius-#{"#{$name}"}: #{$radius};
+  }
+  
+  // Typography Base
+  --text-base-size: 1.125rem; // 18px
+  --text-scale-ratio: 1.125; // Major second
+
+  // Generate font-size variables
+  @each $name, $font-size in $font-sizes {
+    --text-#{"#{$name}"}: #{$font-size};
+  }
+
+  // Font-weight
+  --heading-font-weight: 700;
+  --body-font-weight: 400;
+
+  // Line-height
+  --heading-line-height: 1.05;
+  --body-line-height: 1.45;
+}
+
+// Min-tablet styles
+@include m.breakpoint(md) {  // Breakpoint md (tablets)
+  :root {
+    --text-scale-ratio: 1.2; // Minor third
+
+    // Generate font-size variables
+    @each $name, $font-size in $font-sizes {
+      --text-#{"#{$name}"}: #{$font-size};
+    }
+
+    // Padding
+    --section-padding: 128px;
+    --side-padding: 56px;  
+  }
+}

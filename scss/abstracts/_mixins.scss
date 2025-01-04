@@ -1,0 +1,31 @@
+@use 'breakpoints' as b;
+@use "sass:map"; // Import  map-modules
+
+// Responsive breakpoints mixin from breakpoints map
+@mixin breakpoint($size) {
+  @media (min-width: map.get(b.$breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Background color mixin using CSS variables
+@mixin bg($color) {
+  background-color: var(--color-#{$color});
+}
+
+// Text color mixin using CSS variables
+@mixin text($color) {
+  color: var(--color-#{$color});
+}
+
+// Border color mixin using CSS variables
+@mixin border($color) {
+  border-color: var(--color-#{$color});
+}
+
+// Hover styles mixin using CSS variables
+@mixin hover($property, $color) {
+  &:hover {
+    #{$property}: var(--color-#{$color});
+  }
+}

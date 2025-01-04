@@ -1,0 +1,20 @@
+{
+  "name": "gelfe-workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss:./css",
+    "dev": "concurrently \"sass --watch ./scss:./css\" \"wp-scripts start --config webpack.config.js\"",
+    "build": "wp-scripts build --config webpack.config.js"
+  },
+  "author": "Fredrik Eklund",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.82.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.7.0",
+    "concurrently": "^9.1.2"
+  }
+}
