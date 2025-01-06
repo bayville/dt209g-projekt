@@ -1,0 +1,40 @@
+@use '../abstracts' as a;
+
+// Generate flex-direction classes
+$flex-directions: (
+  row,
+  row-reverse,
+  column,
+  column-reverse
+);
+
+@each $direction in $flex-directions {
+  .flex-#{$direction} {
+    flex-direction: #{$direction};
+  }
+}
+
+// Generate flex-direction classes for all breakpoints
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $direction in $flex-directions {
+      .bp-#{$breakpoint}:flex-#{$direction} {
+        flex-direction: #{$direction};
+      }
+    }
+  }
+}
+
+
+// Generate flex-wrap classes
+$flex-wrap: (
+  nowrap,
+  wrap,
+  wrap-reverse
+);
+
+@each $value in $flex-wrap {
+  .flex-#{$value} {
+    flex-wrap: #{$value};
+  }
+}

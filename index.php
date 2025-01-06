@@ -3,7 +3,8 @@ get_header();
 ?>
 
 <main>
-  <section class="section container--l">
+  <section class="section bg-yellow">
+    <div class="container">
     <?php 
     // Check if there are any posts
     if (have_posts()) :
@@ -39,7 +40,16 @@ get_header();
       <p><?php _e('Inga inlägg hittades.', 'gefle-workspace'); ?></p>
       
     <?php endif; ?>
+    </div>
   </section>
+<div class="d-grid bp-md:grid-cols-3 bp-md:justify-items-center">
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5</p>
+</div>
+
 
 <?php
 get_footer();

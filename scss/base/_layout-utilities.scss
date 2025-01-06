@@ -10,62 +10,23 @@ $displays: (
   none,
 );
 
+// For each item
 @each $name in $displays {
   .d-#{$name} {
     display: #{$name};
   }
 }
 
-
-// Generate grid-comluns
-$cols: (
-  grid-cols-1: repeat(1, minmax(0, 1fr)),
-  grid-cols-2: repeat(2, minmax(0, 1fr)),
-  grid-cols-3: repeat(3, minmax(0, 1fr)),
-  grid-cols-4: repeat(4, minmax(0, 1fr)),
-  grid-cols-5: repeat(5, minmax(0, 1fr)),
-  grid-cols-6: repeat(6, minmax(0, 1fr)),
-  grid-cols-7: repeat(7, minmax(0, 1fr)),
-  grid-cols-8: repeat(8, minmax(0, 1fr)),
-  grid-cols-9: repeat(9, minmax(0, 1fr)),
-  grid-cols-10: repeat(10, minmax(0, 1fr)),
-  grid-cols-11: repeat(11, minmax(0, 1fr)),
-  grid-cols-12: repeat(12, minmax(0, 1fr)),
-  grid-cols-none: none  
-);
-
-@each $name, $value in $cols {
-  .#{$name} {
-    grid-template-columns: #{$value};
-  }
-}
-
-// Generate columns for breakpoints
+// For each breakpoint
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
-    @each $name, $value in $cols {
-      .bp-#{$breakpoint}\:#{$name} {
-        grid-template-columns: #{$value};
+    @each $name in $displays {
+      .bp-#{$breakpoint}:d-#{$name} {
+        display: #{$name};
       }
     }
   }
 }
-
-
-// Generate auto-rows classes
-$auto-rows: (
-  auto,
-  min,
-  max,
-  fr
-);
-
-@each $value in $auto-rows {
-  .grid-rows-#{$value} {
-    grid-auto-rows: #{$value};
-  }
-}
-
 
 // Generate position classes
 $positions: (
@@ -76,9 +37,21 @@ $positions: (
   sticky
 );
 
+// For each item
 @each $name in $positions {
   .d-#{$name} {
     position: #{$name};
+  }
+}
+
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $name in $positions {
+      .bp-#{$breakpoint}:position-#{$name} {
+        position: #{$name};
+      }
+    }
   }
 }
 
@@ -93,6 +66,7 @@ $gaps: (
   xl: 1.25rem,
 );
 
+// For each item
 @each $size, $gap in $gaps {
   .gap-#{$size} {
     gap: #{$gap};
@@ -105,41 +79,108 @@ $gaps: (
   }
 }
 
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $size, $gap in $gaps {
+      .bp-#{$breakpoint}:gap-#{$size} {
+        gap: #{$gap};
+      }
+      .bp-#{$breakpoint}:gap-x-#{$size} {
+        column-gap: #{$gap};
+      }
+      .bp-#{$breakpoint}:gap-y-#{$size} {
+        row-gap: #{$gap};
+      }
+    }
+  }
+}
+
 
 // Generate justify-content classes
 $justify-content: (
   start,
+  flex-start,
   end,
+  flex-end,
   center,
-  between,
-  around,
-  evenly
+  space-between,
+  space-around,
+  space-evenly,
 );
 
+// For each item
 @each $value in $justify-content {
-  .justify-#{$value} {
+  .justify-cotnent-#{$value} {
     justify-content: #{$value};
   }
 }
 
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $justify-content {
+      .bp-#{$breakpoint}:justify-content-#{$value} {
+        justify-content: #{$value};
+      }
+    }
+  }
+}
+
+// Generate justify-item classes
+$justify-items: (
+  center,
+  start,
+  end,
+  stretch
+);
+
+// For each item
+@each $value in $justify-items {
+  .justify-items-#{$value} {
+    justify-items: #{$value};
+  }
+}
+
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $justify-items {
+      .bp-#{$breakpoint}:justify-items-#{$value} {
+        justify-items: #{$value};
+      }
+    }
+  }
+}
 
 // Align-content classes
 $align-content: (
   start,
   end,
   center,
-  between,
-  around,
-  evenly,
+  space-between,
+  space-around,
+  space-evenly,
   stretch
 );
 
+// For each item
 @each $value in $align-content{
-  .content-#{$value} {
+  .align-content-#{$value} {
     align-content: #{$value};
   }
 }
 
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $align-content {
+      .bp-#{$breakpoint}:align-content-#{$value} {
+        align-content: #{$value};
+      }
+    }
+  }
+}
 
 // Generate align-items classes
 $align-items: (
@@ -150,26 +191,23 @@ $align-items: (
   stretch
 );
 
+// For each item
 @each $value in $align-items {
-  .items-#{$value} {
+  .align-items-#{$value} {
     align-items: #{$value};
   }
 }
 
-
-// Generate flex-wrap classes
-$flex-wrap: (
-  nowrap,
-  wrap,
-  wrap-reverse
-);
-
-@each $value in $flex-wrap {
-  .flex-#{$value} {
-    flex-wrap: #{$value};
+// For each breakpoint
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $align-items {
+      .bp-#{$breakpoint}:align-items-#{$value} {
+        align-items: #{$value};
+      }
+    }
   }
 }
-
 
 //Generate z-index classes
 $z-index: (
@@ -180,33 +218,19 @@ $z-index: (
   toast: 9999,
 );
 
+// For each item
 @each $name, $value in $z-index {
   .z-#{$name} {
     z-index: #{$value};
   }
 }
 
-
-// Generate flex-direction classes
-$flex-directions: (
-  row,
-  row-reverse,
-  column,
-  column-reverse
-);
-
-@each $direction in $flex-directions {
-  .flex-#{$direction} {
-    flex-direction: #{$direction};
-  }
-}
-
-// Generate flex-direction classes for all breakpoints
+// For each breakpoint
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
-    @each $direction in $flex-directions {
-      .bp-#{$breakpoint}:flex-#{$direction} {
-        flex-direction: #{$direction};
+    @each $name, $value in $z-index {
+      .bp-#{$breakpoint}:z-#{$name} {
+        z-index: #{$value};
       }
     }
   }

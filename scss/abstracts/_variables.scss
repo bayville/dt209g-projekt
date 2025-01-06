@@ -51,14 +51,13 @@ $spacing: (
     --color-#{"#{$name}"}: #{$color};
   }
 
-  // Padding
-  --section-padding: 64px;
-  --side-padding: 24px;
-  --header-height: 70px;
 
   // Spacing
   --space-base: 1rem;
-
+  // Generate spacing-variables
+  @each $name, $space in $spacing {
+    --spacing-#{"#{$name}"}: #{$space};
+  }
 
    // Generate radius root variables
    @each $name, $radius in $radius-sizes {
@@ -93,8 +92,5 @@ $spacing: (
       --text-#{"#{$name}"}: #{$font-size};
     }
 
-    // Padding
-    --section-padding: 128px;
-    --side-padding: 56px;  
   }
 }

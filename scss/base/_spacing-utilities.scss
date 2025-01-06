@@ -59,3 +59,67 @@
     margin-block: #{$value};
   }
 }
+
+
+// For each breakpoint
+@each $name, $value in a.$spacing {
+  @each $breakpoint, $size in a.$breakpoints {
+    @include a.breakpoint($breakpoint) {
+      .bp-#{$breakpoint}:m-#{"#{$name}"} {
+        margin: #{$value};
+      }
+
+      .bp-#{$breakpoint}:p-#{"#{$name}"} {
+        padding: #{$value};
+      }
+
+      .bp-#{$breakpoint}:mt-#{"#{$name}"} {
+        margin-top: #{$value};
+      }
+
+      .bp-#{$breakpoint}:mb-#{"#{$name}"} {
+        margin-bottom: #{$value};
+      }
+
+      .bp-#{$breakpoint}:ml-#{"#{$name}"} {
+        margin-left: #{$value};
+      }
+
+      .bp-#{$breakpoint}:mr-#{"#{$name}"} {
+        margin-right: #{$value};
+      }
+
+      .bp-#{$breakpoint}:mx-#{"#{$name}"} {
+        margin-inline: #{$value};
+      }
+
+      .bp-#{$breakpoint}:my-#{"#{$name}"} {
+        margin-block: #{$value};
+      }
+
+      .bp-#{$breakpoint}:pt-#{"#{$name}"} {
+        padding-top: #{$value};
+      }
+
+      .bp-#{$breakpoint}:pb-#{"#{$name}"} {
+        padding-bottom: #{$value};
+      }
+
+      .bp-#{$breakpoint}:pl-#{"#{$name}"} {
+        padding-left: #{$value};
+      }
+
+      .bp-#{$breakpoint}:pr-#{"#{$name}"} {
+        padding-right: #{$value};
+      }
+
+      .bp-#{$breakpoint}:px-#{"#{$name}"} {
+        padding-inline: #{$value};
+      }
+
+      .bp-#{$breakpoint}:py-#{"#{$name}"} {
+        padding-block: #{$value};
+      }
+    }
+  }
+}

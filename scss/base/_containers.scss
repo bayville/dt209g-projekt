@@ -1,0 +1,11 @@
+@use '../abstracts' as a;
+
+.container {
+  width: min(100% - 1rem, a.$max-width-content);
+  max-width: a.$max-width-content;
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--spacing-4xl);
+}
