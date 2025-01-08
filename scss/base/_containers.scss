@@ -9,3 +9,10 @@
 .section {
   padding-block: var(--spacing-4xl);
 }
+
+
+// Wordpress-container-block
+.wp-block-column {
+  // Extends the container
+  @extend .container;
+}

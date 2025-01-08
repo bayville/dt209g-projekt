@@ -7,7 +7,7 @@ $colors: (
   yellow: #ffcc00,
   smoke: #f0f1f3,
   black: #1f1f20, 
-  white: #ffffff   
+  white: #ffffff
 );
 
 $font-sizes: (
@@ -80,6 +80,9 @@ $spacing: (
   // Line-height
   --heading-line-height: 1.05;
   --body-line-height: 1.45;
+
+  // Header height
+  --header-height: 5rem;
 }
 
 // Min-tablet styles

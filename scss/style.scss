@@ -10,3 +10,8 @@ html{
 }
 
 html, body { height: 100%; }
+
+
+main {
+  margin-top: var(--header-height);
+}

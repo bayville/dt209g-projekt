@@ -52,11 +52,11 @@
   }
 
   .px-#{"#{$name}"} {
-    margin-inline: #{$value};
+    padding-inline: #{$value};
   }
 
   .py-#{"#{$name}"} {
-    margin-block: #{$value};
+    padding-block: #{$value};
   }
 }
 

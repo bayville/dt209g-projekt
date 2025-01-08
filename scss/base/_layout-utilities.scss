@@ -39,7 +39,7 @@ $positions: (
 
 // For each item
 @each $name in $positions {
-  .d-#{$name} {
+  .p-#{$name} {
     position: #{$name};
   }
 }
@@ -111,7 +111,7 @@ $justify-content: (
 
 // For each item
 @each $value in $justify-content {
-  .justify-cotnent-#{$value} {
+  .justify-content-#{$value} {
     justify-content: #{$value};
   }
 }
@@ -213,6 +213,7 @@ $align-items: (
 $z-index: (
   base: 0,
   dropdown: 10,
+  menu: 50,
   overlay: 100,
   modal: 1000,
   toast: 9999,

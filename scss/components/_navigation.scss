@@ -1,0 +1,58 @@
+@use '../abstracts/' as a;
+
+.mainNav {
+// Wordpress navigation-block
+.wp-block-navigation {
+
+  &-item {
+    // Adding invisible underline and animation
+    text-decoration: underline transparent;
+    transition: text-decoration 300ms ease;
+    color: var(--color-blue);
+
+    &:hover {
+      // Sets underline to text-color
+      text-decoration: underline;
+    }
+  }
+
+  // Change size of built in wordpress nav-element
+  &__responsive {
+
+    // Padding for open nav on mobile
+    &-dialog {
+      padding: 1rem;
+    }
+
+    &-container {
+
+      // Change size of open
+      &-open, &-close {
+        svg {
+          width: 2em;
+          height: 2em;
+        }
+      }
+    }
+  }
+
+}
+
+// Add styling for active nav-item   
+.current-menu-item {
+  a {
+    span {
+      font-weight: 700;
+    }
+  }
+
+}
+
+
+
+  // Gap for links
+  gap: 1.5rem;
+
+
+  }
+
