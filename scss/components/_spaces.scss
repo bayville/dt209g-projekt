@@ -1,0 +1,21 @@
+@use '../abstracts/' as a;
+
+.spaces {
+  
+  &__card{
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(31, 31, 32, 0.1);
+    
+    div {
+
+      img {
+        border-radius: 8px 8px 0px 0px;
+        max-height: 200px;
+        object-fit: cover;
+      }
+      
+    }
+  
+  }
+
+}

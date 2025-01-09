@@ -6,13 +6,19 @@
   margin-inline: auto;
 }
 
+.container-m {
+  width: min(100% - 1rem, a.$max-width-content);
+  max-width: a.$max-width-m;
+  margin-inline: auto;
+}
+
 .section {
   padding-block: var(--spacing-4xl);
 }
 
 
 // Wordpress-container-block
-.wp-block-column {
+.wp-block-columns {
   // Extends the container
   @extend .container;
 }

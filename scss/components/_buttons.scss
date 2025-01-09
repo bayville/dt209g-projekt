@@ -1,4 +1,16 @@
 .btn {
-  background-color: red;
-  color:black;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-xs);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-decoration: none;
+
+  // Default styling
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+}
+
+.wp-element-button, .wp-block-button__link {
+@extend .btn;
+
 }

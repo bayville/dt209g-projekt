@@ -67,7 +67,7 @@ $gaps: (
 );
 
 // For each item
-@each $size, $gap in $gaps {
+@each $size, $gap in a.$spacing {
   .gap-#{$size} {
     gap: #{$gap};
   }
@@ -185,6 +185,8 @@ $align-content: (
 // Generate align-items classes
 $align-items: (
   start,
+  flex-start,
+  flex-end,
   end,
   center,
   baseline,
@@ -235,4 +237,26 @@ $z-index: (
       }
     }
   }
+}
+
+// Text classes
+$text-alignment: (
+  center,
+  left,
+  right,
+  end,
+  justify,
+  start
+
+);
+
+@each $name in $text-alignment {
+  .text-#{$name} {
+    text-align: #{$name};
+  }
+}
+
+
+.h-100 {
+  height: 100%;
 }

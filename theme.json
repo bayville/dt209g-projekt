@@ -39,10 +39,12 @@
         }
       ]
     },
-    "custom": {},
+    "custom": {
+      "patterns": "true"
+    },
     "dimensions": {},
     "layout": {
-      "contentSize": "650px",
+      "contentSize": "1000px",
 			"wideSize": "1200px"
     },
     "position": {},

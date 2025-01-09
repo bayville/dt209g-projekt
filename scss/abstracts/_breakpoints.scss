@@ -15,4 +15,29 @@ $max-width-xs: calc((4 / 12) * $max-width-content);
 $max-width-s: calc((6 / 12) * $max-width-content);
 $max-width-m: calc((8 / 12) * $max-width-content);
 $max-width-l: calc((10 / 12) * $max-width-content);
-$max-width-xl: calc(1 * $max-width-content);
+$max-width-xl: calc(1 * $max-width-content);  
+
+
+.max-width-content {
+  max-width: 1160px;
+}
+
+.max-width-xs {
+  max-width: $max-width-xs;
+}
+
+.max-width-s {
+  max-width: $max-width-s;
+}
+
+.max-width-m {
+  max-width: $max-width-m;
+}
+
+.max-width-l {
+  max-width: $max-width-l;
+}
+
+.max-width-xl {
+  max-width: $max-width-xl;
+}

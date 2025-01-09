@@ -11,15 +11,15 @@ $colors: (
 );
 
 $font-sizes: (
-  xs: calc((var(--text-base-size) / var(--text-scale-ratio)) / var(--text-scale-ratio)),
-  sm: calc(var(--text-xs) * var(--text-scale-ratio)),
-  base: var(--text-base-size),
-  md: calc(var(--text-s) * var(--text-scale-ratio) * var(--text-scale-ratio)),
-  lg: calc(var(--text-m) * var(--text-scale-ratio)),
-  xl: calc(var(--text-l) * var(--text-scale-ratio)),
-  2xl: calc(var(--text-xl) * var(--text-scale-ratio)),
-  3xl: calc(var(--text-2xl) * var(--text-scale-ratio)),
-  4xl: calc(var(--text-3xl) * var(--text-scale-ratio)),
+    xs: calc(var(--text-base-size) / pow(var(--text-scale-ratio), 2)),
+    sm: calc(var(--text-base-size) / var(--text-scale-ratio)),
+    base: var(--text-base-size),
+    md: calc(var(--text-base-size) * var(--text-scale-ratio)),
+    lg: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 2)),
+    xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 3)),
+    2xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 4)),
+    3xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 5)),
+    4xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 6))
 );
 
 $radius-sizes: (
@@ -54,6 +54,7 @@ $spacing: (
 
   // Spacing
   --space-base: 1rem;
+  
   // Generate spacing-variables
   @each $name, $space in $spacing {
     --spacing-#{"#{$name}"}: #{$space};

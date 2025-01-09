@@ -1,0 +1,7 @@
+@use '../abstracts' as a;
+.hero {
+
+  p {
+    max-width: a.$max-width-xs;
+  }
+}
