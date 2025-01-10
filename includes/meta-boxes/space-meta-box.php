@@ -1,5 +1,4 @@
 <?php
-
       // Meta-Box Generator
       // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
       // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
@@ -24,6 +23,18 @@
                'vecka',
                'månad',
             ),
+           ) ,
+           array(
+            'label' => 'Det här ingår: (en per rad)',
+            'id' => 'facilities',
+            'type' => 'textarea',
+           ),
+           array(
+            'label' => 'Kapacitet',
+            'id' => 'capacity',
+            'type' => 'number',
+            'default' => '1',
+
            )  
         );
 
@@ -61,6 +72,15 @@
               }
             }
             switch ( $field['type'] ) {
+              case 'textarea':
+                $input = sprintf(
+                  '<textarea style="width: 100%%" id="%s" name="%s" rows="5">%s</textarea>',
+                  $field['id'],
+                  $field['id'],
+                  $meta_value
+                );
+                break;
+
               case 'select':
               $input = sprintf(
                 '<select id="%s" name="%s">',

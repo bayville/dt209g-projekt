@@ -5,12 +5,13 @@
   font-size: var(--text-sm);
   text-decoration: none;
 
-  // Default styling
-  background-color: var(--color-yellow);
-  color: var(--color-blue);
+
 }
 
 .wp-element-button, .wp-block-button__link {
 @extend .btn;
+  // Default styling
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
 
 }

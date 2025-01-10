@@ -6524,6 +6524,10 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-2-70-30 {
+  grid-template-columns: 70% 30%;
+}
+
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -6575,6 +6579,9 @@ body {
   .bp-xs\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .bp-xs\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
+  }
   .bp-xs\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -6615,6 +6622,9 @@ body {
   }
   .bp-sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bp-sm\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
   }
   .bp-sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6657,6 +6667,9 @@ body {
   .bp-md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .bp-md\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
+  }
   .bp-md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -6697,6 +6710,9 @@ body {
   }
   .bp-lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bp-lg\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
   }
   .bp-lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6739,6 +6755,9 @@ body {
   .bp-xl\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .bp-xl\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
+  }
   .bp-xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -6780,6 +6799,9 @@ body {
   .bp-2xl\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .bp-2xl\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
+  }
   .bp-2xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -6820,6 +6842,9 @@ body {
   }
   .bp-3xl\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bp-3xl\:grid-cols-2-70-30 {
+    grid-template-columns: 70% 30%;
   }
   .bp-3xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6871,6 +6896,324 @@ body {
   grid-auto-rows: fr;
 }
 
+.col-span-1 {
+  grid-column: span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-5 {
+  grid-column: span 5;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-7 {
+  grid-column: span 7;
+}
+
+.col-span-8 {
+  grid-column: span 8;
+}
+
+.col-span-9 {
+  grid-column: span 9;
+}
+
+.col-span-10 {
+  grid-column: span 10;
+}
+
+.col-span-11 {
+  grid-column: span 11;
+}
+
+.col-span-12 {
+  grid-column: span 12;
+}
+
+@media (min-width: 23.438em) {
+  .bp-xs\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-xs\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-xs\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-xs\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-xs\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-xs\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-xs\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-xs\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-xs\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-xs\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-xs\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-xs\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 26.563em) {
+  .bp-sm\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-sm\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-sm\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-sm\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-sm\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-sm\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-sm\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-sm\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-sm\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-sm\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-sm\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-sm\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 48em) {
+  .bp-md\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-md\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-md\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-md\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-md\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-md\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-md\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-md\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-md\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-md\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-md\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-md\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 64em) {
+  .bp-lg\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-lg\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-lg\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-lg\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-lg\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-lg\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-lg\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-lg\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-lg\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-lg\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-lg\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-lg\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 80em) {
+  .bp-xl\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-xl\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-xl\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-xl\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-xl\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-xl\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-xl\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-xl\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-xl\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-xl\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-xl\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-xl\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 90em) {
+  .bp-2xl\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-2xl\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-2xl\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-2xl\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-2xl\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-2xl\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-2xl\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-2xl\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-2xl\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-2xl\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-2xl\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-2xl\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+@media (min-width: 120em) {
+  .bp-3xl\:col-span-1 {
+    grid-column: span 1;
+  }
+  .bp-3xl\:col-span-2 {
+    grid-column: span 2;
+  }
+  .bp-3xl\:col-span-3 {
+    grid-column: span 3;
+  }
+  .bp-3xl\:col-span-4 {
+    grid-column: span 4;
+  }
+  .bp-3xl\:col-span-5 {
+    grid-column: span 5;
+  }
+  .bp-3xl\:col-span-6 {
+    grid-column: span 6;
+  }
+  .bp-3xl\:col-span-7 {
+    grid-column: span 7;
+  }
+  .bp-3xl\:col-span-8 {
+    grid-column: span 8;
+  }
+  .bp-3xl\:col-span-9 {
+    grid-column: span 9;
+  }
+  .bp-3xl\:col-span-10 {
+    grid-column: span 10;
+  }
+  .bp-3xl\:col-span-11 {
+    grid-column: span 11;
+  }
+  .bp-3xl\:col-span-12 {
+    grid-column: span 12;
+  }
+}
+.col-span-full {
+  grid-column: 1/-1;
+}
+
 .container, .wp-block-columns {
   width: min(100% - 1rem, 1160px);
   max-width: 1160px;
@@ -6893,6 +7236,9 @@ body {
   font-weight: 700;
   font-size: var(--text-sm);
   text-decoration: none;
+}
+
+.wp-element-button, .wp-block-button__link {
   background-color: var(--color-yellow);
   color: var(--color-blue);
 }
@@ -6933,7 +7279,7 @@ body {
   text-decoration: underline;
 }
 .mainNav .wp-block-navigation__responsive-dialog {
-  padding: 1rem;
+  padding-left: 1rem;
 }
 .mainNav .wp-block-navigation__responsive-container-open svg, .mainNav .wp-block-navigation__responsive-container-close svg {
   width: 2em;
@@ -6954,6 +7300,14 @@ body {
 .spaces__card div img {
   border-radius: 8px 8px 0px 0px;
   max-height: 200px;
+  object-fit: cover;
+}
+
+.single-space__img--container {
+  max-height: 500px;
+  overflow: hidden;
+}
+.single-space__img--container img {
   object-fit: cover;
 }
 

@@ -53,11 +53,11 @@ function render_space_block($attributes) {
             ];
     
             if ($meta_data['price'] && $meta_data['period']) {
-                $output .= '<p class="text-sm">' . esc_html($meta_data['price']) . ' SEK <span class="text-xs">/' . esc_html($meta_data['period']) . '</span></p>';
+                $output .= '<p class="text-sm ">' . esc_html($meta_data['price']) . ' SEK <span class="text-xs">/' . esc_html($meta_data['period']) . '</span></p>';
             }
             $output .= '<p>' . get_the_excerpt() . '</p>';
             
-            $output .= '<div class="py-md"><a href="' . esc_url(get_permalink(get_the_ID())) . '" class="btn bg-yellow">Se mer info</a></div>';
+            $output .= '<div class="py-md"><a href="' . esc_url(get_permalink(get_the_ID())) . '" class="btn bg-yellow text-blue">Se mer info</a></div>';
 
             $output .= '</article>';
         }

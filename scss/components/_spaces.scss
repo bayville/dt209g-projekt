@@ -19,3 +19,14 @@
   }
 
 }
+
+.single-space {
+  &__img--container {
+    max-height: 500px;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

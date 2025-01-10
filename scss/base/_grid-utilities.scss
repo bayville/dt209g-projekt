@@ -4,6 +4,7 @@
 $cols: (
   grid-cols-1: repeat(1, minmax(0, 1fr)),
   grid-cols-2: repeat(2, minmax(0, 1fr)),
+  grid-cols-2-70-30: 70% 30%,
   grid-cols-3: repeat(3, minmax(0, 1fr)),
   grid-cols-4: repeat(4, minmax(0, 1fr)),
   grid-cols-5: repeat(5, minmax(0, 1fr)),
@@ -47,4 +48,43 @@ $auto-rows: (
   .grid-rows-#{$value} {
     grid-auto-rows: #{$value};
   }
+}
+
+
+$col-span: (
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+);
+
+
+@each $value in $col-span {
+  .col-span-#{$value} {
+    grid-column: span #{$value};
+  }
+}
+
+
+// Generate column-spans for breakpoints
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $col-span {
+      .bp-#{$breakpoint}\:col-span-#{$value} {
+        grid-column: span #{$value};
+      }
+    }
+  }
+}
+
+.col-span-full{
+  grid-column: 1 / -1;
 }
