@@ -46,9 +46,14 @@ function render_space_block($attributes) {
             // Post title
             $output .= '</div><div class="p-md"><h3 class="text-xl">' . get_the_title() . '</h3>';
             
-            // Get price from custom field
-            if ($price = get_post_meta(get_the_ID(), 'price', true)) {
-                $output .= '<p class="text-sm">' . esc_html($price) . ' SEK</p>';
+            // Get meta data
+            $meta_data = [
+                'price' => get_post_meta(get_the_ID(), 'price', true),
+                'period' => get_post_meta(get_the_ID(), 'period', true),
+            ];
+    
+            if ($meta_data['price'] && $meta_data['period']) {
+                $output .= '<p class="text-sm">' . esc_html($meta_data['price']) . ' SEK <span class="text-xs">/' . esc_html($meta_data['period']) . '</span></p>';
             }
             $output .= '<p>' . get_the_excerpt() . '</p>';
             

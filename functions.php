@@ -10,6 +10,7 @@ require_once get_template_directory() . '/includes/theme-support/custom-block-ca
 require_once get_template_directory() . '/includes/theme-support/svg.php';    // SVG-support
 require_once get_template_directory() . '/includes/theme-support/disable-comments.php'; // Disables comments
 require_once get_template_directory() . '/includes/theme-support/block-template-support.php'; // Add block theme-support
+require_once get_template_directory() . '/includes/theme-support/require-post-thumbnail.php'; // Force thumbnail and title on certain post-types
 
 // /**
 //  * Widgets

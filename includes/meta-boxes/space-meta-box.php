@@ -1,18 +1,29 @@
 <?php
-// Meta-Box Generator
+
+      // Meta-Box Generator
       // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
       // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
 
       class SpaceMetabox {
-
+        //Post types to display in
         private $screens = array('space');
 
+        // Fields
         private $fields = array(
           array(
             'label' => 'Pris',
             'id' => 'price',
             'type' => 'number',
-            'default' => '0',
+           ),
+          array(
+            'label' => 'Prisperiod',
+            'id' => 'period',
+            'type' => 'select',
+            'options' => array(
+               'dag',
+               'vecka',
+               'månad',
+            ),
            )  
         );
 
@@ -36,7 +47,6 @@
 
         public function meta_box_callback( $post ) {
           wp_nonce_field( 'Space_data', 'Space_nonce' ); 
-          echo "Lägger till fields för platser";
           $this->field_generator( $post );
         }
 
@@ -51,6 +61,24 @@
               }
             }
             switch ( $field['type'] ) {
+              case 'select':
+              $input = sprintf(
+                '<select id="%s" name="%s">',
+                $field['id'],
+                $field['id']
+              );
+              foreach ( $field['options'] as $key => $value ) {
+                $field_value = !is_numeric( $key ) ? $key : $value;
+                $input .= sprintf(
+                  '<option %s value="%s">%s</option>',
+                  $meta_value === $field_value ? 'selected' : '',
+                  $field_value,
+                  $value
+                );
+              }
+              $input .= '</select>';
+              break;
+        
               default:
                 $input = sprintf(
                 '<input %s id="%s" name="%s" type="%s" value="%s">',
@@ -105,3 +133,5 @@
       if (class_exists('SpaceMetabox')) {
         new SpaceMetabox;
       };
+
+      
