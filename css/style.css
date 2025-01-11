@@ -7311,6 +7311,13 @@ body {
   object-fit: cover;
 }
 
+.not-found {
+  min-height: 85dvh !important;
+}
+.not-found h1 {
+  font-size: 5rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
