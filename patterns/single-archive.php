@@ -1,44 +1,18 @@
 <?php
 
 /**
- * Title: Single space page-template
- * Slug: gefle-workspace/single-space-template
+ * Title: Single archive template
+ * Slug: gefle-workspace/single-archive-template
  * Categories: custom-pages
  * Inserter: no
  */
 ?>
 
 
-<?php
-// Get meta-data
-$meta_data = [
-  'price' => get_post_meta(get_the_ID(), 'price', true),
-  'period' => get_post_meta(get_the_ID(), 'period', true),
-  'facilities' => get_post_meta(get_the_ID(), 'facilities', true),
-  'capacity' => get_post_meta(get_the_ID(), 'capacity', true)
-];
-?>
-
 <main class="container d-grid grid-cols-1 bp-md:grid-cols-2-70-30 gap-y-sm mb-xl">
-  <!-- Image-container -->
-  <div class="single-space__img--container mb-lg bp-md:col-span-2">
-    <!-- wp:post-featured-image /-->
-  </div>
-  <div class="single-space__content">
-    <!-- wp:post-title {"level":1} /-->
-    <?php
-    if ($meta_data['capacity']) {
-      echo ('<p class="text-blue mb-md">Antal platser: ' . esc_html($meta_data['capacity']) . '</p>');
-    }
-    ?>
-    <h2 class="text-xl">Om platsen</h2>
-    <!-- wp:post-content {"className":"paragraph-width"} /-->
-
-  </div>
 
 
   <aside class="bg-smoke p-md radius-xs d-flex flex-column justify-content-space-between">
-<!-- wp:categories {"showPostCounts":true,"className":"category p-md radius-xs"} /-->
 
     <?php
     if ($meta_data['price'] && $meta_data['period']) {

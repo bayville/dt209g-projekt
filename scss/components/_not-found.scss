@@ -1,6 +1,11 @@
 .not-found {
-  min-height: 85dvh !important;
+  // min-height: 85dvh !important;
+  flex-grow: 1;
   h1 {
     font-size: 5rem;
   }
+}
+
+.content-404 {
+  flex-grow: 1;
 }
