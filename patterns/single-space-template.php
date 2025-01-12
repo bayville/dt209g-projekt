@@ -3,7 +3,7 @@
 /**
  * Title: Single space page-template
  * Slug: gefle-workspace/single-space-template
- * Categories: custom-pages
+ * Categories: custom-pages, gefle-workspace-pattern
  * Inserter: no
  */
 ?>
@@ -38,7 +38,6 @@ $meta_data = [
 
 
   <aside class="bg-smoke p-md radius-xs d-flex flex-column justify-content-space-between">
-<!-- wp:categories {"showPostCounts":true,"className":"category p-md radius-xs"} /-->
 
     <?php
     if ($meta_data['price'] && $meta_data['period']) {

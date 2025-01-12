@@ -2,6 +2,7 @@
 /**
  * Title: Newsletter Widget
  * Slug: gefle-workspace/newsletter-widget
+ * Categories: custom-widgets, gefle-workspace-pattern
  */
 ?>
 

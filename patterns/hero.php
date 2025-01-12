@@ -2,8 +2,7 @@
 /**
  * Title: Hero
  * Slug: gefle-workspace/hero
- * Categories: custom-pages
- * Description: A business about page with a hero section, a text section, a services section, a team section, a clients section, a FAQ section, and a CTA section.
+ * Categories: hero, gefle-workspace-pattern
  */
 ?>
 

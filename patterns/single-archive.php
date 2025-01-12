@@ -3,7 +3,7 @@
 /**
  * Title: Single archive template
  * Slug: gefle-workspace/single-archive-template
- * Categories: custom-pages
+ * Categories: custom-pages, gefle-workspace-pattern
  * Inserter: no
  */
 ?>

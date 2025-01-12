@@ -2,8 +2,8 @@
 /**
  * Title: CTA
  * Slug: gefle-workspace/cta
- * Categories: custom-pages
- * Description: A business about page with a hero section, a text section, a services section, a team section, a clients section, a FAQ section, and a CTA section.
+ * Categories: call-to-action, gefle-workspace-pattern
+ * Description: CTA
  */
 ?>
 

@@ -3,7 +3,7 @@
 /**
  * Title: Blog page
  * Slug: gefle-workspace/blog-page
- * Categories: custom-pages
+ * Categories: custom-pages, gefle-workspace-pattern
  */
 ?>
 

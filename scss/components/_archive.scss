@@ -41,7 +41,11 @@
               position: absolute;
               top:0;
               left: 0;
-              border-radius: var(--radius-xs) 0 0 var(--radius-xs);
+              border-radius:  var(--radius-xs) var(--radius-xs) 0 0;
+              
+              @include a.breakpoint(md) { 
+                border-radius: var(--radius-xs) 0 0 var(--radius-xs);
+              }
 
             }
           }

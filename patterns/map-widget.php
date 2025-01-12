@@ -3,6 +3,7 @@
 /**
  * Title: Map Widget
  * Slug: gefle-workspace/map-widget
+ * Categories: custom-widgets, gefle-workspace-pattern
  */
 ?>
 

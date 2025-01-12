@@ -2,7 +2,7 @@
 /**
  * Title: Header
  * Slug: gefle-workspace/header
- * Categories: header
+ * Categories: header, gefle-workspace-pattern
  * Block Types: core/template-part/header
  */
 ?>

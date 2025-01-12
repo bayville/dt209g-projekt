@@ -2,6 +2,7 @@
 /**
  * Title: Category Widget
  * Slug: gefle-workspace/category-widget
+ * Categories: custom-widgets, gefle-workspace-pattern
  */
 ?>
 

@@ -2,7 +2,7 @@
 /**
  * Title: Landing page
  * Slug: gefle-workspace/landing-page
- * Categories: custom-pages
+ * Categories: custom-pages, gefle-workspace-pattern
  */
 ?>
 

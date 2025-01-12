@@ -3,7 +3,7 @@
 /**
  * Title: Archive hero
  * Slug: gefle-workspace/archive-hero
- * Categories: custom-pages
+ * Categories: hero, gefle-workspace-pattern
  * Description: Hero containg archive title
  */
 ?>

@@ -1,7 +1,10 @@
+@use 'buttons';
+
 .widget__sidebar {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+
 }
 
 .widget__container {
@@ -10,9 +13,12 @@
   padding: var(--spacing-md);
   box-shadow: 0 4px 4px rgba(31, 31, 32, 0.2);
 
-  h3 {
+  h2, h3 {
     font-size: var(--text-lg);
+    word-break: break-all;
+    margin-bottom: var(--spacing-xs);
   }
+
 
 }
 
@@ -49,4 +55,28 @@
     width: 100%;
     padding-block: var(--spacing-xs);
   }
+}
+
+
+.contact-widget {
+  input {
+    width: 100%;
+    padding-block: var(--spacing-xs);
+  }
+
+  textarea{
+    width: 100%;
+  }
+
+}
+
+
+.wpcf7-submit{
+  @extend .btn;
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+  border: transparent;
+  cursor: pointer;
+  padding-block: var(--spacing-md) !important;
+
 }

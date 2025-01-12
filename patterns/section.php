@@ -3,6 +3,7 @@
  * Title: Section
  * Slug: gefle-workspace/section
  * Block Types: core/template-part/section
+ * Categories: gefle-workspace-pattern
  */
 ?>
 

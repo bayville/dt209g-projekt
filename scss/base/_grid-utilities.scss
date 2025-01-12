@@ -88,3 +88,21 @@ $col-span: (
 .col-span-full{
   grid-column: 1 / -1;
 }
+
+@each $value in $col-span {
+  .row-span-#{$value} {
+    grid-row: span #{$value};
+  }
+}
+
+
+// Generate row-spans for breakpoints
+@each $breakpoint, $size in a.$breakpoints {
+  @include a.breakpoint($breakpoint) {
+    @each $value in $col-span {
+      .bp-#{$breakpoint}\:row-span-#{$value} {
+        grid-row: span #{$value};
+      }
+    }
+  }
+}
