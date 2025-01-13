@@ -32,3 +32,4 @@ require_once get_template_directory() . '/includes/meta-boxes/space-meta-box.php
 
 // Import space block
 require_once get_template_directory() . '/blocks/space/block.php';
+require_once get_template_directory() . '/blocks/space-archive/block.php';

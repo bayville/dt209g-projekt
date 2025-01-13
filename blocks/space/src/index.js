@@ -1,52 +1,71 @@
 const { registerBlockType } = wp.blocks;
 const { InspectorControls } = wp.blockEditor;
-const { RangeControl } = wp.components;
+const { RangeControl, SelectControl, PanelBody, PanelRow } = wp.components;
 const ServerSideRender = wp.serverSideRender;
 
-
-registerBlockType('gefle-workspace/space-block', {
-    title: 'Space Block',
-    icon: 'desktop',
-    description: 'Visar upp till 9 rum',
-    category: 'widgets',
-    attributes: {
-        postsToShow: {
-            type: 'number',
-            default: 2,
-        },
+registerBlockType("gefle-workspace/space-block", {
+  title: "Space Block",
+  icon: "desktop",
+  description: "Visar spaces i olika layouter",
+  category: "widgets",
+  attributes: {
+    postsToShow: {
+      type: "number",
+      default: 3,
     },
-    supports: {
-        align: true,
-        html: false
-    },
-    edit: (props) => {
-      const { postsToShow } = props.attributes;
-      return (
-          <div className="space-block">
-              <InspectorControls>
-                  <RangeControl
-                      label="Antal utrymmen att visa"
-                      value={postsToShow}
-                      onChange={(newValue) => {
-                          props.setAttributes({ postsToShow: newValue });
-                      }}
-                      min={1}
-                      max={9}
-                      step={1}
-                  />
-              </InspectorControls>
-  
-  
-              <div className="space__container">
-                  <ServerSideRender
-                      block="gefle-workspace/space-block"
-                      attributes={props.attributes}
-                  />
-              </div>
-          </div>
-      );
+    variant: {
+      type: "string",
+      default: "variant-1"
+    }
   },
-    save: () => {
-        return null;
-    },
+  edit: (props) => {
+    const { postsToShow, variant } = props.attributes;
+    return (
+      <div className="space-block">
+        <InspectorControls>
+          <PanelBody
+            title="Space Block Inställningar"
+            initialOpen={true}
+          >
+
+              <RangeControl
+                label="Antal spaces att visa"
+                value={postsToShow}
+                onChange={(newValue) => {
+                  props.setAttributes({ postsToShow: newValue });
+                }}
+                min={-1}
+                max={12}
+                step={1}
+                 help="-1 visar alla tillgängliga spaces"
+                __next40pxDefaultSize
+                __nextHasNoMarginBottom
+              />
+    
+              <SelectControl
+                label="Layout"
+                value={variant}
+                options={[
+                  { label: 'Variant 1', value: 'variant-1' },
+                  { label: 'Variant 2', value: 'variant-2' },
+                ]}
+                onChange={(newValue) => props.setAttributes({ variant: newValue })}
+                __next40pxDefaultSize
+                __nextHasNoMarginBottom
+              />
+          </PanelBody>
+        </InspectorControls>
+
+        <div className="space__container">
+          <ServerSideRender
+            block="gefle-workspace/space-block"
+            attributes={props.attributes}
+          />
+        </div>
+      </div>
+    );
+  },
+  save: () => {
+    return null;
+  },
 });

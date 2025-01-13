@@ -7619,6 +7619,25 @@ body {
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(31, 31, 32, 0.2);
 }
+.spaces__card__img {
+  border-radius: 8px 8px 0px 0px;
+  max-height: 400px !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 48em) {
+  .spaces__card__img {
+    border-radius: 8px 0px 0px 8px !important;
+  }
+}
+.spaces__card__img--container {
+  position: relative;
+  min-height: 200px;
+}
 .spaces__card div img {
   border-radius: 8px 8px 0px 0px;
   max-height: 200px;

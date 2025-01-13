@@ -1,86 +1,76 @@
 <?php
 // Register the block
-function register_space_block() {
-    register_block_type('gefle-workspace/space-block', array(
-        'editor_script' => 'gefle-workspace-space-block', // load script to recieve props
-        'attributes' => array(
-            'postsToShow' => array(
-                'type' => 'number',
-                'default' => 3,  // Default
-            ),
-        ),
-        'render_callback' => 'render_space_block'
-    ));
+function register_space_block()
+{
+	register_block_type('gefle-workspace/space-block', array(
+		'editor_script' => 'gefle-workspace-space-block', // load script to recieve props
+		'attributes' => array(
+			'postsToShow' => array(
+				'type' => 'number',
+				'default' => 3,
+			),
+			'variant' => array(
+				'type' => 'string',
+				'default' => 'variant-1', // Standardlayout
+			),
+		),
+		'render_callback' => 'render_space_block'
+	));
 }
 add_action('init', 'register_space_block');
 
 // Render the block
-function render_space_block($attributes) {
+function render_space_block($attributes)
+{
+	$posts_to_show = isset($attributes['postsToShow']) ? $attributes['postsToShow'] : 3;
+	$variant = isset($attributes['variant']) ? $attributes['variant'] : 'variant-1';
+	$output = "";
 
-    // Get number of posts from the editor-script default = 3
-    $posts_to_show = isset($attributes['postsToShow']) ? $attributes['postsToShow'] : 3;
+	// Get all spaces
+	$args = array(
+		'post_type' => 'space',
+		'posts_per_page' => $posts_to_show,
+	);
+	$spaces_query = new WP_Query($args);
 
-    // Get all spaces
-    $args = array(
-        'post_type' => 'space',  // Post type
-        'posts_per_page' => $posts_to_show,
-    );
-    $spaces_query = new WP_Query($args);
+	// Output
+	if ($spaces_query->have_posts()) {
 
-    // Build the output for render
-    if ($spaces_query->have_posts()) {
-        $output = '<section class="section bg-smoke spaces">';
-        $output .= '<div class="container text-black">';
-        $output .= '<h2 class="text-center mb-2xl">Våra spaces</h2>';
-        $output .= '<div class="space__container d-grid bp-md:grid-cols-3 gap-lg">';
+		ob_start(); // Output-buffering
 
-        while ($spaces_query->have_posts()) {
-            $spaces_query->the_post();
-            $output .= '<article class="spaces__card radius-md"> <div> <!--  Innehåll per space --> ';
+		// Switch to choose layout
+		switch ($variant) {
+			case "variant-1":
+				include get_template_directory() . '/blocks/space/layout-variant-1.php';
+				break;
+			case "variant-2":
+				include get_template_directory() . '/blocks/space/layout-variant-2.php';
+				break;
+			default:
+				include get_template_directory() . '/blocks/space/layout-variant-1.php';
+		}
 
-            // Show post thumbnail
-            if (has_post_thumbnail()) {
-                $output .= get_the_post_thumbnail(null, 'large', array('class' => ' '));
-            }
+		// Get output-buffer
+		$output = ob_get_clean();
 
-            // Post title
-            $output .= '</div><div class="p-md"><h3 class="text-xl">' . get_the_title() . '</h3>';
-            
-            // Get meta data
-            $meta_data = [
-                'price' => get_post_meta(get_the_ID(), 'price', true),
-                'period' => get_post_meta(get_the_ID(), 'period', true),
-            ];
-    
-            if ($meta_data['price'] && $meta_data['period']) {
-                $output .= '<p class="text-sm ">' . esc_html($meta_data['price']) . ' SEK <span class="text-xs">/' . esc_html($meta_data['period']) . '</span></p>';
-            }
-            $output .= '<p>' . get_the_excerpt() . '</p>';
-            
-            $output .= '<div class="py-md"><a href="' . esc_url(get_permalink(get_the_ID())) . '" class="btn bg-yellow text-blue">Se mer info</a></div>';
+		// Reset postdata and return output
+		wp_reset_postdata();
+		return $output;
+	}
 
-            $output .= '</article>';
-        }
-
-        $output .= '</div></div></section>';
-    } else {
-        $output = null;
-    }
-
-    wp_reset_postdata();
-
-    return $output;
+	wp_reset_postdata();
+	return ''; // Retrurn empty strig
 }
 
 
-
 // Register js for gutenberg-block
-function enqueue_space_block_assets() {
-    wp_enqueue_script(
-        'gefle-workspace-space-block',  // Script-name
-        get_template_directory_uri() . '/blocks/space/build/index.js',
-        array('wp-blocks', 'wp-element', 'wp-editor'),
-        filemtime(get_template_directory() . '/blocks/space/build/index.js')
-    );
+function enqueue_space_block_assets()
+{
+	wp_enqueue_script(
+		'gefle-workspace-space-block',  // Script-name
+		get_template_directory_uri() . '/blocks/space/build/index.js',
+		array('wp-blocks', 'wp-element', 'wp-editor'),
+		filemtime(get_template_directory() . '/blocks/space/build/index.js')
+	);
 }
 add_action('enqueue_block_editor_assets', 'enqueue_space_block_assets');

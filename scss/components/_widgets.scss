@@ -19,7 +19,6 @@
     margin-bottom: var(--spacing-xs);
   }
 
-
 }
 
 .category-widget {
@@ -57,7 +56,6 @@
   }
 }
 
-
 .contact-widget {
   input {
     width: 100%;
@@ -67,9 +65,7 @@
   textarea{
     width: 100%;
   }
-
 }
-
 
 .wpcf7-submit{
   @extend .btn;
