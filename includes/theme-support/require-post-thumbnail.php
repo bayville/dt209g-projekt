@@ -5,7 +5,7 @@
 function lock_publish_until_thumbnail() {
 
   // Affected post-types
-  $screens = array('space');
+  $screens = array('space', 'employee');
   
   // Current post-type
   $screen = get_current_screen();

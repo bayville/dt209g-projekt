@@ -39,9 +39,6 @@ $cols: (
 // Generate auto-rows classes
 $auto-rows: (
   auto,
-  min,
-  max,
-  fr
 );
 
 @each $value in $auto-rows {

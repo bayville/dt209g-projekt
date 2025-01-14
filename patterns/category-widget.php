@@ -12,5 +12,5 @@
 <h3 class="wp-block-heading">Kategorier</h3>
 <!-- /wp:heading -->
 
-<!-- wp:categories {"showPostCounts":true,"className":" category-widget"} /--></div>
+<!-- wp:categories {"showPostCounts":true,"className":"category-widget"} /--></div>
 <!-- /wp:group -->

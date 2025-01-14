@@ -1,41 +1,28 @@
 <?php
-      // Meta-Box Generator 
-      // https://app.wp-monkey.com/generators/metabox-generator
+    
+      // Meta-Box Generator
       // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
       // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
 
-      class SpaceMetabox {
-        //Post types to display in
-        private $screens = array('space');
+      class employeeMetabox {
 
-        // Fields
+        private $screens = array('employee');
+
         private $fields = array(
           array(
-            'label' => 'Pris',
-            'id' => 'price',
-            'type' => 'number',
+            'label' => 'Email',
+            'id' => 'email',
+            'type' => 'email',
            ),
           array(
-            'label' => 'Prisperiod',
-            'id' => 'period',
-            'type' => 'select',
-            'options' => array(
-               'dag',
-               'vecka',
-               'månad',
-            ),
-           ) ,
-           array(
-            'label' => 'Det här ingår: (en per rad)',
-            'id' => 'facilities',
-            'type' => 'textarea',
+            'label' => 'Telefon',
+            'id' => 'phone',
+            'type' => 'tel',
            ),
-           array(
-            'label' => 'Kapacitet',
-            'id' => 'capacity',
-            'type' => 'number',
-            'default' => '1',
-
+          array(
+            'label' => 'Roll',
+            'id' => 'role',
+            'type' => 'text',
            )  
         );
 
@@ -47,8 +34,8 @@
         public function add_meta_boxes() {
           foreach ( $this->screens as $s ) {
             add_meta_box(
-              'Space',
-              __( 'Space', 'gefle-workspace' ),
+              'employee',
+              __( 'employee', 'gefle-workspace' ),
               array( $this, 'meta_box_callback' ),
               $s,
               'normal',
@@ -58,7 +45,7 @@
         }
 
         public function meta_box_callback( $post ) {
-          wp_nonce_field( 'Space_data', 'Space_nonce' ); 
+          wp_nonce_field( 'employee_data', 'employee_nonce' ); 
           $this->field_generator( $post );
         }
 
@@ -73,33 +60,6 @@
               }
             }
             switch ( $field['type'] ) {
-              case 'textarea':
-                $input = sprintf(
-                  '<textarea style="width: 100%%" id="%s" name="%s" rows="5">%s</textarea>',
-                  $field['id'],
-                  $field['id'],
-                  $meta_value
-                );
-                break;
-
-              case 'select':
-              $input = sprintf(
-                '<select id="%s" name="%s">',
-                $field['id'],
-                $field['id']
-              );
-              foreach ( $field['options'] as $key => $value ) {
-                $field_value = !is_numeric( $key ) ? $key : $value;
-                $input .= sprintf(
-                  '<option %s value="%s">%s</option>',
-                  $meta_value === $field_value ? 'selected' : '',
-                  $field_value,
-                  $value
-                );
-              }
-              $input .= '</select>';
-              break;
-        
               default:
                 $input = sprintf(
                 '<input %s id="%s" name="%s" type="%s" value="%s">',
@@ -122,11 +82,11 @@
         
 
         public function save_fields( $post_id ) {
-          if ( !isset( $_POST['Space_nonce'] ) ) {
+          if ( !isset( $_POST['employee_nonce'] ) ) {
             return $post_id;
           }
-          $nonce = $_POST['Space_nonce'];
-          if ( !wp_verify_nonce( $nonce, 'Space_data' ) ) {
+          $nonce = $_POST['employee_nonce'];
+          if ( !wp_verify_nonce( $nonce, 'employee_data' ) ) {
             return $post_id;
           }
           if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -151,8 +111,6 @@
 
       }
 
-      if (class_exists('SpaceMetabox')) {
-        new SpaceMetabox;
+      if (class_exists('employeeMetabox')) {
+        new employeeMetabox;
       };
-
-      

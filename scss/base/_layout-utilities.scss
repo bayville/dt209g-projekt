@@ -21,7 +21,7 @@ $displays: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $name in $displays {
-      .bp-#{$breakpoint}:d-#{$name} {
+      .bp-#{$breakpoint}\:d-#{$name} {
         display: #{$name};
       }
     }
@@ -48,7 +48,7 @@ $positions: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $name in $positions {
-      .bp-#{$breakpoint}:position-#{$name} {
+      .bp-#{$breakpoint}\:position-#{$name} {
         position: #{$name};
       }
     }
@@ -56,18 +56,8 @@ $positions: (
 }
 
 
-// Generate gaps
-$gaps: (
-  0: 0,
-  xs: 0.25rem,
-  sm: 0.5rem,
-  md: 0.75rem,
-  lg: 1rem,
-  xl: 1.25rem,
-);
-
 // For each item
-@each $size, $gap in a.$spacing {
+@each $size, $gap in a.$padding {
   .gap-#{$size} {
     gap: #{$gap};
   }
@@ -82,14 +72,14 @@ $gaps: (
 // For each breakpoint
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
-    @each $size, $gap in $gaps {
-      .bp-#{$breakpoint}:gap-#{$size} {
+    @each $size, $gap in a.$padding {
+      .bp-#{$breakpoint}\:gap-#{$size} {
         gap: #{$gap};
       }
-      .bp-#{$breakpoint}:gap-x-#{$size} {
+      .bp-#{$breakpoint}\:gap-x-#{$size} {
         column-gap: #{$gap};
       }
-      .bp-#{$breakpoint}:gap-y-#{$size} {
+      .bp-#{$breakpoint}\:gap-y-#{$size} {
         row-gap: #{$gap};
       }
     }
@@ -120,7 +110,7 @@ $justify-content: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $value in $justify-content {
-      .bp-#{$breakpoint}:justify-content-#{$value} {
+      .bp-#{$breakpoint}\:justify-content-#{$value} {
         justify-content: #{$value};
       }
     }
@@ -146,7 +136,7 @@ $justify-items: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $value in $justify-items {
-      .bp-#{$breakpoint}:justify-items-#{$value} {
+      .bp-#{$breakpoint}\:justify-items-#{$value} {
         justify-items: #{$value};
       }
     }
@@ -175,7 +165,7 @@ $align-content: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $value in $align-content {
-      .bp-#{$breakpoint}:align-content-#{$value} {
+      .bp-#{$breakpoint}\:align-content-#{$value} {
         align-content: #{$value};
       }
     }
@@ -204,7 +194,7 @@ $align-items: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $value in $align-items {
-      .bp-#{$breakpoint}:align-items-#{$value} {
+      .bp-#{$breakpoint}\:align-items-#{$value} {
         align-items: #{$value};
       }
     }
@@ -232,7 +222,7 @@ $z-index: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $name, $value in $z-index {
-      .bp-#{$breakpoint}:z-#{$name} {
+      .bp-#{$breakpoint}\:z-#{$name} {
         z-index: #{$value};
       }
     }

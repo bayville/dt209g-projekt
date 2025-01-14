@@ -3,7 +3,7 @@
 ?>
 <section class="section spaces">
     <div class="container text-black">
-        <h2 class="text-center mb-2xl">Våra spaces</h2>
+        <h2 class="mb-2xl">Våra kontor</h2>
         <div class="space__container d-grid gap-lg">
             <?php while ($spaces_query->have_posts()) : $spaces_query->the_post(); ?>
                 <article class="spaces__card radius-md d-grid bp-md:grid-cols-2">
@@ -24,7 +24,7 @@
                         if ($meta_data['price'] && $meta_data['period']) : ?>
                             <p class="text-sm">
                                 <?php echo esc_html($meta_data['price']); ?> SEK
-                                <span class="text-xs">/<?php echo esc_html($meta_data['period']); ?></span>
+                                <span>/<?php echo esc_html($meta_data['period']); ?></span>
                             </p>
                         <?php endif; ?>
 

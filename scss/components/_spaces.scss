@@ -46,6 +46,8 @@
   &__img--container {
     max-height: 500px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     img {
       object-fit: cover;

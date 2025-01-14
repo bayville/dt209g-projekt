@@ -59,7 +59,7 @@ $meta_data = [
     <a href="#" class="btn bg-yellow text-blue text-center d-block">Boka plats</a>
   </aside>
 </main>
-<aside>
+<section>
 
 <div class="section bg-green">
 <div class="container text-center">
@@ -67,6 +67,6 @@ $meta_data = [
 
 <p class="mb-lg">Boka en plats idag och upptäck ditt nya kreativa hem.</p>
 
-<div><a href="#" class="btn bg-blue text-white">Kontakta oss</a></div>
+<div><a href="/kontakt" class="btn bg-blue text-white">Kontakta oss</a></div>
 
-</aside>
+</section

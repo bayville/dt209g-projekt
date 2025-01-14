@@ -26,10 +26,14 @@ require_once get_template_directory() . '/includes/theme-support/require-post-th
 require_once get_template_directory() . '/includes/post-types/space-post-type.php';
 require_once get_template_directory() . '/includes/meta-boxes/space-meta-box.php';
 
+require_once get_template_directory() . '/includes/post-types/employee-post-type.php';
+require_once get_template_directory() . '/includes/meta-boxes/employee-meta-box.php';
+
+
 /**
 * Custom blocks
 */
 
 // Import space block
 require_once get_template_directory() . '/blocks/space/block.php';
-require_once get_template_directory() . '/blocks/space-archive/block.php';
+require_once get_template_directory() . '/blocks/employee/block.php';

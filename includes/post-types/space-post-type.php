@@ -24,7 +24,7 @@ function create_space_cpt()
         'supports' => array('title', 'thumbnail', 'editor'),
         'menu_icon' => 'dashicons-desktop',
         'rewrite' => array(
-            'slug' => 'space',
+            'slug' => 'kontor',
             'with_front' => false,
         ),
     );

@@ -11,11 +11,11 @@ $colors: (
 );
 
 $font-sizes: (
-    xs: calc(var(--text-base-size) / pow(var(--text-scale-ratio), 2)),
+    xs: calc(var(--text-base-size) / (var(--text-scale-ratio) * 2)),
     sm: calc(var(--text-base-size) / var(--text-scale-ratio)),
     base: var(--text-base-size),
     md: calc(var(--text-base-size) * var(--text-scale-ratio)),
-    lg: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 2)),
+    lg: calc(var(--text-base-size) * (var(--text-scale-ratio) * 2)),
     xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 3)),
     2xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 4)),
     3xl: calc(var(--text-base-size) * pow(var(--text-scale-ratio), 5)),
@@ -34,6 +34,19 @@ $radius-sizes: (
 $spacing: (
   0: 0px,
   auto: auto,
+  2xs: calc(var(--space-base) * 0.25),
+  xs: calc(var(--space-base) * 0.5),
+  sm: var(--space-base),
+  md: calc(var(--space-base) * 1.5),
+  lg: calc(var(--space-base) * 2),
+  xl: calc(var(--space-base) * 2.5),
+  2xl: calc(var(--space-base) * 3),
+  3xl: calc(var(--space-base) * 3.5),
+  4xl: calc(var(--space-base) * 4)
+);
+
+$padding: (
+  0: 0px,
   2xs: calc(var(--space-base) * 0.25),
   xs: calc(var(--space-base) * 0.5),
   sm: var(--space-base),

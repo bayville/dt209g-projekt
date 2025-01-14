@@ -18,7 +18,7 @@ $flex-directions: (
 @each $breakpoint, $size in a.$breakpoints {
   @include a.breakpoint($breakpoint) {
     @each $direction in $flex-directions {
-      .bp-#{$breakpoint}:flex-#{$direction} {
+      .bp-#{$breakpoint}\:flex-#{$direction} {
         flex-direction: #{$direction};
       }
     }
