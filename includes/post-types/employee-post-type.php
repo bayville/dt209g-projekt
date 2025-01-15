@@ -27,7 +27,33 @@ function create_employee()
             'slug' => 'employee',
             'with_front' => false,
         ),
+        'capability_type' => 'employee',
+        'capabilities' => array(
+            'edit_post' => 'edit_employee',
+            'read_post' => 'read_employee',
+            'delete_post' => 'delete_employee',
+            'edit_posts' => 'edit_employees',
+            'edit_others_posts' => 'edit_others_employees',
+            'publish_posts' => 'publish_employees',
+            'read_private_posts' => 'read_private_employees',
+        ),
     );
     register_post_type('employee', $args);
 }
 add_action('init', 'create_employee');
+
+// Give rights to admins only
+function add_employee_capabilities()
+{
+    $role = get_role('administrator');
+    if ($role) {
+        $role->add_cap('edit_employee');
+        $role->add_cap('read_employee');
+        $role->add_cap('delete_employee');
+        $role->add_cap('edit_employees');
+        $role->add_cap('edit_others_employees');
+        $role->add_cap('publish_employees');
+        $role->add_cap('read_private_employees');
+    }
+}
+add_action('admin_init', 'add_employee_capabilities');
