@@ -14,7 +14,7 @@
   box-shadow: 0 4px 4px rgba(31, 31, 32, 0.2);
 
   h2, h3 {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     word-break: break-all;
     margin-bottom: var(--spacing-xs);
   }
@@ -43,7 +43,7 @@
   flex-direction: column;
 
   label {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     font-weight: bold;
     margin-bottom: var(--spacing-sm);
   }

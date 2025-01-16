@@ -41,7 +41,7 @@ $meta_data = [
 
     <?php
     if ($meta_data['price'] && $meta_data['period']) {
-      echo ('<h3 class="text-xl text-center mb-md">' . esc_html($meta_data['price']) . ' SEK <span class="text-xs">/' . esc_html($meta_data['period']) . '</span></h3>');
+      echo ('<h3 class="text-xl text-center mb-md">' . esc_html($meta_data['price']) . ' SEK <span class="text-sm">/' . esc_html($meta_data['period']) . '</span></h3>');
     }
 
     if ($meta_data['facilities']) {

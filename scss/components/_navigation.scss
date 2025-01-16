@@ -27,7 +27,7 @@
     &-container {
 
       // Change size of open
-      &-open, &-close {
+      &-open, &-close{
         svg {
           width: 2em;
           height: 2em;
@@ -53,6 +53,13 @@
   // Gap for links
   gap: 1.5rem;
 
-
   }
 
+
+
+  .wp-block-navigation__responsive-container-close {
+    top: 0.938em;
+    right: 0.625em;
+
+
+  }

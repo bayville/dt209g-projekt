@@ -7804,6 +7804,11 @@ body {
   font-weight: 700;
 }
 
+.wp-block-navigation__responsive-container-close {
+  top: 0.938em;
+  right: 0.625em;
+}
+
 .hero p {
   max-width: 386.6666666667px;
 }
@@ -7871,7 +7876,7 @@ body {
   box-shadow: 0 4px 4px rgba(31, 31, 32, 0.2);
 }
 .widget__container h2, .widget__container h3 {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   word-break: break-all;
   margin-bottom: var(--spacing-xs);
 }
@@ -7894,7 +7899,7 @@ body {
   flex-direction: column;
 }
 .search-widget label {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   font-weight: bold;
   margin-bottom: var(--spacing-sm);
 }
