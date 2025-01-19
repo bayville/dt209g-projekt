@@ -379,7 +379,7 @@ p {
   --radius-xl: 24px;
   --text-base-size: 1.125rem;
   --text-scale-ratio: 1.125;
-  --text-xs: calc(var(--text-base-size) / (var(--text-scale-ratio) * 2));
+  --text-xs: calc(var(--text-base-size) / var(--text-scale-ratio) * 2);
   --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
   --text-base: var(--text-base-size);
   --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
@@ -398,7 +398,7 @@ p {
 @media (min-width: 48em) {
   :root {
     --text-scale-ratio: 1.2;
-    --text-xs: calc(var(--text-base-size) / (var(--text-scale-ratio) * 2));
+    --text-xs: calc(var(--text-base-size) / var(--text-scale-ratio) * 2);
     --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
     --text-base: var(--text-base-size);
     --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
