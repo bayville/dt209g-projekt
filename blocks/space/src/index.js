@@ -48,6 +48,8 @@ registerBlockType("gefle-workspace/space-block", {
                 options={[
                   { label: 'Variant 1', value: 'variant-1' },
                   { label: 'Variant 2', value: 'variant-2' },
+                  { label: 'Variant 1 sidebar', value: 'variant-1-sidebar' },
+                  { label: 'Variant 2 sidebar', value: 'variant-2-sidebar' },
                 ]}
                 onChange={(newValue) => props.setAttributes({ variant: newValue })}
                 __next40pxDefaultSize

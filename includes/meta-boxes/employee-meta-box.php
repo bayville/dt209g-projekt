@@ -1,6 +1,7 @@
 <?php
     
       // Meta-Box Generator
+      // https://app.wp-monkey.com/generators/metabox-generator
       // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
       // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
 

@@ -37,7 +37,6 @@ function create_space_cpt()
             'publish_posts' => 'publish_spaces',
             'read_private_posts' => 'read_private_spaces',
         ),
-        'map_meta_cap' => true,
     );
     register_post_type('space', $args);
 }

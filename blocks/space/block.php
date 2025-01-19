@@ -46,6 +46,12 @@ function render_space_block($attributes)
 			case "variant-2":
 				include get_template_directory() . '/blocks/space/layout-variant-2.php';
 				break;
+			case "variant-1-sidebar":
+				include get_template_directory() . '/blocks/space/layout-variant-1-sidebar.php';
+				break;
+			case "variant-2-sidebar":
+				include get_template_directory() . '/blocks/space/layout-variant-2-sidebar.php';
+				break;
 			default:
 				include get_template_directory() . '/blocks/space/layout-variant-1.php';
 		}
